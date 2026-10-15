@@ -1,0 +1,60 @@
+name: StupidApp
+options:
+  bundleIdPrefix: com.utkarsh
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+targets:
+  StupidApp:
+    type: application
+    platform: iOS
+    sources:
+      - StupidApp
+      - Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.utkarsh.stupidapp
+        INFOPLIST_FILE: StupidApp/Info.plist
+        CODE_SIGN_ENTITLEMENTS: StupidApp/StupidApp.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_CFBundleDisplayName: Stupid App
+    dependencies:
+      - target: StupidAppWidget
+    postCompileScripts:
+      # This project lives under ~/Documents, which iCloud Drive decorates with
+      # extended attributes. codesign refuses to sign a bundle carrying them
+      # ("resource fork, Finder information, or similar detritus not allowed"),
+      # so strip them after the bundle is assembled and before signing.
+      - script: /usr/bin/xattr -cr "$TARGET_BUILD_DIR/$WRAPPER_NAME" || true
+        name: Strip extended attributes
+
+  StupidAppWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - StupidAppWidget
+      - Shared
+      # The extension runs in its own process and needs its own copy of the
+      # models it reads and the colours it draws with.
+      - StupidApp/Models
+      - StupidApp/Design
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.utkarsh.stupidapp.widget
+        INFOPLIST_FILE: StupidAppWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: StupidAppWidget/StupidAppWidget.entitlements
+        SKIP_INSTALL: true
+        TARGETED_DEVICE_FAMILY: "1"
+    postCompileScripts:
+      - script: /usr/bin/xattr -cr "$TARGET_BUILD_DIR/$WRAPPER_NAME" || true
+        name: Strip extended attributes
+

@@ -1,0 +1,746 @@
+<title>Nopiate Concepts</title>
+<style>
+  :root {
+    --ground: #F2F4F6;
+    --surface: #FBFCFD;
+    --ink: #1B2430;
+    --muted: #5C6B7A;
+    --faint: #9AA7B3;
+    --hair: #D9DFE5;
+    --accent: #2E7D83;
+    --accent-ink: #236166;
+    --chip: #E7EDF0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #10161D;
+      --surface: #171F28;
+      --ink: #E8EDF2;
+      --muted: #93A2B1;
+      --faint: #6B7A89;
+      --hair: #26303B;
+      --accent: #5FB3B8;
+      --accent-ink: #7CC7CB;
+      --chip: #1E2933;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #10161D;
+    --surface: #171F28;
+    --ink: #E8EDF2;
+    --muted: #93A2B1;
+    --faint: #6B7A89;
+    --hair: #26303B;
+    --accent: #5FB3B8;
+    --accent-ink: #7CC7CB;
+    --chip: #1E2933;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 28px 96px; }
+
+  /* ---------- page typography ---------- */
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent-ink); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: ui-serif, "New York", Georgia, serif;
+    font-size: clamp(34px, 5vw, 52px); font-weight: 600;
+    letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance;
+  }
+  .lede { font-size: 17px; color: var(--muted); max-width: 62ch; margin: 0; }
+  h2 {
+    font-family: ui-serif, "New York", Georgia, serif;
+    font-size: 27px; font-weight: 600; margin: 0 0 6px; text-wrap: balance;
+  }
+  .sub { color: var(--muted); font-size: 15px; max-width: 68ch; margin: 0 0 26px; }
+  section { margin-top: 72px; }
+  .rule { border: 0; border-top: 1px solid var(--hair); margin: 64px 0 0; }
+
+  /* ---------- principles strip ---------- */
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 28px; }
+  .prin {
+    background: var(--surface); border: 1px solid var(--hair); border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .prin b { display: block; font-size: 13.5px; margin-bottom: 3px; }
+  .prin span { font-size: 12.5px; color: var(--muted); }
+
+  /* ---------- gallery rows ---------- */
+  .row { display: flex; flex-wrap: wrap; gap: 34px; align-items: flex-start; }
+  .shot { display: flex; flex-direction: column; gap: 12px; }
+  .caption { max-width: 300px; font-size: 13px; color: var(--muted); }
+  .caption b { color: var(--ink); font-weight: 600; }
+  .notes { margin: 26px 0 0; padding: 0; list-style: none; max-width: 74ch; }
+  .notes li {
+    font-size: 13.5px; color: var(--muted); padding: 9px 0 9px 18px; position: relative;
+    border-top: 1px solid var(--hair);
+  }
+  .notes li::before { content: ""; position: absolute; left: 0; top: 16px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .notes b { color: var(--ink); }
+
+  /* ---------- device frames ---------- */
+  .phone {
+    width: 300px; height: 636px; flex: none;
+    background: #050608; border-radius: 47px; padding: 9px;
+    box-shadow: 0 24px 60px rgba(8, 15, 25, 0.35), 0 2px 8px rgba(8,15,25,0.25);
+    position: relative;
+  }
+  .screen {
+    width: 100%; height: 100%; border-radius: 39px; overflow: hidden;
+    display: flex; flex-direction: column; position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  }
+  .island {
+    position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+    width: 86px; height: 24px; border-radius: 13px; background: #050608; z-index: 5;
+  }
+  .watch {
+    width: 176px; height: 214px; flex: none;
+    background: #050608; border-radius: 52px; padding: 9px;
+    box-shadow: 0 18px 44px rgba(8,15,25,0.35); position: relative;
+  }
+  .watch::after {
+    content: ""; position: absolute; right: -5px; top: 62px; width: 6px; height: 34px;
+    border-radius: 3px; background: #1a1d22;
+  }
+  .wscreen {
+    width: 100%; height: 100%; border-radius: 44px; overflow: hidden; background: #000;
+    color: #F2F6F9; display: flex; flex-direction: column; padding: 22px 16px 16px;
+  }
+
+  /* =========================================================
+     DIRECTION A — TIDEWATER (self-contained dark screens)
+     ========================================================= */
+  .tw { background: linear-gradient(178deg, #0C1526 0%, #0E1A2E 55%, #10203A 100%); color: #EAF1F8; }
+  .tw .status { display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 600; padding: 12px 22px 0; color: #B9C7D6; }
+  .tw-head { padding: 22px 22px 0; }
+  .tw-date { font-size: 12px; color: #7E93AC; font-weight: 500; }
+  .tw-title { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; }
+
+  .gauge { position: relative; width: 196px; height: 196px; margin: 18px auto 6px; }
+  .gauge svg { transform: rotate(-90deg); }
+  .gauge .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .gauge .big { font-size: 52px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .gauge .unit { font-size: 13px; color: #7E93AC; margin-top: 4px; }
+
+  .tw-chip {
+    margin: 8px auto 0; width: max-content; max-width: 90%;
+    background: rgba(70, 181, 169, 0.13); border: 1px solid rgba(70,181,169,0.35);
+    color: #7BD0C6; font-size: 11.5px; font-weight: 600; padding: 5px 12px; border-radius: 999px;
+  }
+  .slots { margin: 18px 16px 0; display: flex; flex-direction: column; gap: 8px; }
+  .slot {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 11px 14px;
+  }
+  .slot .tick {
+    width: 26px; height: 26px; border-radius: 50%; flex: none;
+    display: flex; align-items: center; justify-content: center; font-size: 13px;
+    background: rgba(70,181,169,0.16); color: #6FCFC3; border: 1px solid rgba(70,181,169,0.4);
+  }
+  .slot.todo .tick { background: transparent; color: #55697F; border: 1.5px dashed #33465C; }
+  .slot .l1 { font-size: 13.5px; font-weight: 600; }
+  .slot .l2 { font-size: 11.5px; color: #7E93AC; font-variant-numeric: tabular-nums; }
+  .slot .logbtn {
+    margin-left: auto; font-size: 12px; font-weight: 700; color: #0B1522;
+    background: #58C2B5; border-radius: 999px; padding: 6px 14px;
+  }
+  .slot .donemg { margin-left: auto; font-size: 13px; color: #9FB2C6; font-variant-numeric: tabular-nums; }
+  .tw-quiet { text-align: center; font-size: 12px; color: #61788F; margin-top: 14px; }
+  .tw-quiet u { text-decoration-color: #3B5674; text-underline-offset: 3px; }
+
+  .tabbar {
+    margin-top: auto; display: flex; justify-content: space-around; align-items: center;
+    padding: 10px 8px 22px; border-top: 1px solid rgba(255,255,255,0.06);
+    background: rgba(10, 18, 32, 0.6); backdrop-filter: blur(10px);
+  }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 9.5px; color: #5E7590; font-weight: 600; }
+  .tab svg { width: 20px; height: 20px; stroke: #5E7590; }
+  .tab.on { color: #6FCFC3; }
+  .tab.on svg { stroke: #6FCFC3; }
+
+  /* log sheet */
+  .dim { background: linear-gradient(178deg, #0C1526, #10203A); }
+  .sheet {
+    margin-top: auto; background: #141F33; border-radius: 26px 26px 0 0;
+    padding: 18px 20px 30px; box-shadow: 0 -18px 40px rgba(0,0,0,0.45);
+  }
+  .grab { width: 36px; height: 4px; border-radius: 2px; background: #2C3D55; margin: 0 auto 16px; }
+  .sheet h3 { margin: 0 0 14px; font-size: 17px; }
+  .amounts { display: flex; gap: 8px; margin-bottom: 14px; }
+  .amt {
+    flex: 1; text-align: center; padding: 12px 0 10px; border-radius: 13px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    font-variant-numeric: tabular-nums;
+  }
+  .amt b { display: block; font-size: 18px; }
+  .amt span { font-size: 10.5px; color: #7E93AC; }
+  .amt.sel { background: rgba(88,194,181,0.16); border-color: #58C2B5; }
+  .amt.sel b { color: #7BD0C6; }
+  .whyrow { display: flex; gap: 6px; margin-bottom: 4px; }
+  .why {
+    flex: 1; text-align: center; font-size: 11.5px; font-weight: 600; padding: 8px 0;
+    border-radius: 10px; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08); color: #93A6BC;
+  }
+  .why.sel { background: rgba(88,194,181,0.14); border-color: rgba(88,194,181,0.5); color: #7BD0C6; }
+  .whenrow { display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; padding: 12px 2px; border-top: 1px solid rgba(255,255,255,0.07); color: #B9C7D6; }
+  .whenrow b { color: #EAF1F8; font-variant-numeric: tabular-nums; }
+  .bigcta {
+    margin-top: 14px; background: #58C2B5; color: #0B1522; text-align: center;
+    font-size: 16px; font-weight: 700; border-radius: 15px; padding: 15px 0;
+  }
+  .sheetfoot { text-align: center; font-size: 11.5px; color: #61788F; margin-top: 12px; }
+
+  /* wave screen */
+  .wave-center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 26px; text-align: center; }
+  .wavering { position: relative; width: 190px; height: 190px; margin-bottom: 22px; }
+  .wavering .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .wavering .t { font-size: 40px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .wavering .u { font-size: 12px; color: #7E93AC; margin-top: 2px; }
+  .wave-h { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+  .wave-p { font-size: 13px; color: #93A6BC; margin: 0 0 4px; }
+  .intent {
+    margin-top: 18px; font-size: 13px; color: #C4D2E0; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 13px; padding: 12px 16px;
+    font-style: italic;
+  }
+  .wave-actions { display: flex; gap: 10px; padding: 0 20px 28px; }
+  .wa { flex: 1; text-align: center; border-radius: 14px; padding: 13px 0; font-size: 13.5px; font-weight: 600; }
+  .wa.ok { background: #58C2B5; color: #0B1522; }
+  .wa.alt { background: rgba(255,255,255,0.07); color: #B9C7D6; }
+
+  /* =========================================================
+     DIRECTION B — LEDGER (self-contained light screens)
+     ========================================================= */
+  .lg { background: #F7F5EF; color: #232A24; }
+  .lg .status { display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 600; padding: 12px 22px 0; color: #6B7365; }
+  .lg-head { padding: 20px 22px 8px; border-bottom: 1px solid #E2DFD4; }
+  .lg-eyebrow { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A927F; }
+  .lg-title { font-family: ui-serif, "New York", Georgia, serif; font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+  .lg-card { margin: 14px 16px 0; background: #FDFCF8; border: 1px solid #E2DFD4; border-radius: 14px; padding: 14px 16px; }
+  .lg-card h4 { margin: 0 0 2px; font-size: 13px; font-weight: 700; }
+  .lg-card .small { font-size: 11.5px; color: #6B7365; }
+  .stepnum { font-family: ui-serif, "New York", Georgia, serif; font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .steprow { display: flex; align-items: baseline; gap: 10px; }
+  .lg-chart { margin: 6px 0 2px; }
+  .lg-legend { display: flex; gap: 14px; font-size: 10.5px; color: #6B7365; margin-top: 6px; }
+  .lg-legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+  .holdbtn {
+    margin: 14px 16px 0; text-align: center; border: 1.5px solid #5A7D5A;
+    color: #466446; border-radius: 13px; padding: 12px 0; font-size: 14px; font-weight: 700;
+    background: rgba(90,125,90,0.06);
+  }
+  .holdcap { text-align: center; font-size: 11px; color: #8A927F; margin: 8px 24px 0; }
+  .lg .tabbar { border-top: 1px solid #E2DFD4; background: rgba(250,248,242,0.9); }
+  .lg .tab { color: #99A08D; }
+  .lg .tab svg { stroke: #99A08D; }
+  .lg .tab.on { color: #466446; }
+  .lg .tab.on svg { stroke: #466446; }
+  .statgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 16px 0; }
+  .stat { background: #FDFCF8; border: 1px solid #E2DFD4; border-radius: 13px; padding: 12px 14px; }
+  .stat b { display: block; font-family: ui-serif, "New York", Georgia, serif; font-size: 21px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 10.5px; color: #6B7365; }
+  .sows { display: flex; align-items: center; gap: 10px; }
+  .sowsdots { display: flex; gap: 4px; }
+  .sowsdots i { width: 9px; height: 9px; border-radius: 50%; background: #E2DFD4; }
+  .sowsdots i.f { background: #C8A24B; }
+
+  /* =========================================================
+     SYSTEM SURFACES
+     ========================================================= */
+  .la {
+    width: 340px; border-radius: 24px; background: rgba(16, 22, 34, 0.88);
+    border: 1px solid rgba(255,255,255,0.09); color: #EAF1F8; padding: 14px 18px;
+    backdrop-filter: blur(20px); box-shadow: 0 14px 40px rgba(8,15,25,0.4);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .la-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 9px; }
+  .la .app { display: flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600; color: #9FB2C6; }
+  .ladot { width: 8px; height: 8px; border-radius: 50%; background: #58C2B5; }
+  .la .mg { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .la-bar { height: 6px; border-radius: 3px; background: rgba(255,255,255,0.1); overflow: hidden; margin: 8px 0 7px; }
+  .la-fill { height: 100%; width: 78%; border-radius: 3px; background: linear-gradient(90deg, #3E9C92, #58C2B5); }
+  .la-foot { display: flex; justify-content: space-between; font-size: 11.5px; color: #7E93AC; font-variant-numeric: tabular-nums; }
+  .di {
+    width: 240px; height: 37px; border-radius: 20px; background: #050608; color: #EAF1F8;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 16px;
+    font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums;
+    box-shadow: 0 10px 26px rgba(8,15,25,0.4);
+  }
+  .di .g { color: #58C2B5; }
+  .widget-s {
+    width: 148px; height: 148px; border-radius: 30px; padding: 15px;
+    background: linear-gradient(178deg, #0C1526, #10203A); color: #EAF1F8;
+    display: flex; flex-direction: column; box-shadow: 0 14px 36px rgba(8,15,25,0.35);
+  }
+  .widget-s .k { font-size: 10px; font-weight: 700; color: #7E93AC; letter-spacing: 0.06em; text-transform: uppercase; }
+  .widget-s .n { font-size: 34px; font-weight: 700; margin-top: auto; line-height: 1; font-variant-numeric: tabular-nums; }
+  .widget-s .u { font-size: 11px; color: #7E93AC; margin-top: 3px; }
+  .widget-m {
+    width: 312px; height: 148px; border-radius: 30px; padding: 16px 18px;
+    background: linear-gradient(178deg, #0C1526, #10203A); color: #EAF1F8;
+    display: flex; flex-direction: column; box-shadow: 0 14px 36px rgba(8,15,25,0.35);
+  }
+  .wm-top { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #7E93AC; }
+  .wm-slots { display: flex; gap: 8px; margin-top: auto; }
+  .wm-slot { flex: 1; border-radius: 12px; padding: 9px 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); }
+  .wm-slot .t { font-size: 9.5px; color: #7E93AC; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .wm-slot .v { font-size: 13.5px; font-weight: 700; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .wm-slot.done .v { color: #6FCFC3; }
+  .wm-slot.next { border-color: rgba(88,194,181,0.5); }
+
+  .wtime { font-size: 11px; color: #9AA7B3; font-weight: 600; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+  .wbig { font-size: 30px; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+  .wsub { font-size: 12px; color: #8A98A6; margin-top: 3px; }
+  .wcta {
+    margin-top: auto; background: #58C2B5; color: #071219; border-radius: 999px;
+    text-align: center; font-size: 14.5px; font-weight: 700; padding: 12px 0;
+  }
+  .wcta.ghost { background: #1C2530; color: #B9C7D6; }
+  .wring { position: relative; width: 108px; height: 108px; margin: 6px auto; }
+  .wring .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .wring .center b { font-size: 22px; font-variant-numeric: tabular-nums; }
+  .wring .center span { font-size: 9.5px; color: #8A98A6; }
+
+  .surfacerow { display: flex; flex-wrap: wrap; gap: 34px; align-items: center; }
+  .surfacecol { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+
+  .mixnote {
+    margin-top: 30px; background: var(--surface); border: 1px solid var(--hair);
+    border-radius: 14px; padding: 20px 24px; max-width: 76ch; font-size: 14.5px; color: var(--muted);
+  }
+  .mixnote b { color: var(--ink); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Design exploration · iOS 27 + watchOS · personal build</p>
+    <h1>Nopiate</h1>
+    <p class="lede">
+      A private taper companion for 7-OH, with an AI copilot that reads how you're doing and paces the taper
+      around it. Two visual directions below, then the system surfaces (Live Activity, widgets, Apple Watch)
+      that make logging effortless. Numbers throughout are your real ones: baseline ~45&nbsp;mg/day,
+      three half-tablets a day now.
+    </p>
+    <div class="principles">
+      <div class="prin"><b>No streaks, ever</b><span>Primary metric is 7-day average vs baseline. A rough day is a blip on a falling curve, not a reset to zero.</span></div>
+      <div class="prin"><b>Budget, not willpower</b><span>The schedule does the reducing. Today's job is only: log what you take.</span></div>
+      <div class="prin"><b>Hold is first-class</b><span>One tap repeats the current step when withdrawal bites. The finish date is an estimate, not a deadline.</span></div>
+      <div class="prin"><b>Discreet &amp; local</b><span>Neutral name/icon, Face&nbsp;ID lock, no accounts, no cloud. Lock-screen copy never mentions doses.</span></div>
+    </div>
+  </header>
+
+  <hr class="rule" />
+
+  <!-- ============ DIRECTION A ============ -->
+  <section>
+    <p class="eyebrow">Direction A</p>
+    <h2>Tidewater</h2>
+    <p class="sub">
+      Deep-water dark, desaturated teal, one big number per screen. Built for the hardest hours —
+      the evening dose window and the 2&nbsp;a.m. check. Calm by default; amber (never red) when off-plan.
+    </p>
+
+    <div class="row">
+      <!-- TODAY -->
+      <div class="shot">
+        <div class="phone"><div class="island"></div><div class="screen tw">
+          <div class="status"><span>9:41</span><span>􀙇 􀛨</span></div>
+          <div class="tw-head">
+            <div class="tw-date">Saturday, August 16 · Step 6</div>
+            <div class="tw-title">Today</div>
+          </div>
+          <div class="gauge">
+            <svg width="196" height="196" viewBox="0 0 196 196">
+              <circle cx="98" cy="98" r="86" fill="none" stroke="#1F3050" stroke-width="13" />
+              <circle cx="98" cy="98" r="86" fill="none" stroke="#58C2B5" stroke-width="13"
+                stroke-linecap="round" stroke-dasharray="360 540" />
+            </svg>
+            <div class="center">
+              <div class="big">5</div>
+              <div class="unit">mg left of 15 planned</div>
+            </div>
+          </div>
+          <div class="tw-chip">7-day avg 15.0 mg · 67% below baseline</div>
+          <div class="slots">
+            <div class="slot"><div class="tick">✓</div><div><div class="l1">Morning</div><div class="l2">8:12 AM</div></div><div class="donemg">5 mg</div></div>
+            <div class="slot"><div class="tick">✓</div><div><div class="l1">Noon</div><div class="l2">12:41 PM</div></div><div class="donemg">5 mg</div></div>
+            <div class="slot todo"><div class="tick">·</div><div><div class="l1">Evening</div><div class="l2">window opens 7:30 PM</div></div><div class="logbtn">Log</div></div>
+          </div>
+          <div class="tw-quiet">Feeling rough? <u>Open the toolkit</u></div>
+          <div class="tabbar">
+            <div class="tab on"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg>Today</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h6v6H4zM10 12h6v6h-6z"/><path d="M16 18h4"/></svg>Plan</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 17l5-6 4 3 7-9"/></svg>Trends</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 4c-4 4-6 6.5-6 10a6 6 0 0012 0c0-3.5-2-6-6-10z"/></svg>Toolkit</div>
+          </div>
+        </div></div>
+        <p class="caption"><b>Today.</b> The whole screen answers one question: <i>where am I in today's plan?</i> Ring shows remaining budget; the chip is the real success metric. Slots mirror your 3-dose schedule.</p>
+      </div>
+
+      <!-- LOG SHEET -->
+      <div class="shot">
+        <div class="phone"><div class="island"></div><div class="screen tw dim">
+          <div class="status" style="opacity:.4"><span>9:41</span><span>􀙇 􀛨</span></div>
+          <div style="opacity:.25; padding: 22px 22px 0;">
+            <div class="tw-date">Saturday, August 16 · Step 6</div>
+            <div class="tw-title">Today</div>
+          </div>
+          <div class="sheet">
+            <div class="grab"></div>
+            <h3>Log dose</h3>
+            <div class="amounts">
+              <div class="amt"><b>2.5</b><span>mg</span></div>
+              <div class="amt sel"><b>5</b><span>mg</span></div>
+              <div class="amt"><b>7.5</b><span>mg</span></div>
+              <div class="amt"><b>+</b><span>other</span></div>
+            </div>
+            <div class="whyrow">
+              <div class="why sel">On schedule</div>
+              <div class="why">Withdrawal</div>
+              <div class="why">Craving</div>
+            </div>
+            <div class="whenrow"><span>When</span><b>Now · 9:41 PM</b></div>
+            <div class="whenrow"><span>Batch</span><b>7Tabz · lot A-241 <span style="color:#58C2B5">✓ same</span></b></div>
+            <div class="bigcta">Log 5 mg</div>
+            <div class="sheetfoot">Every entry is data. Editing or backfilling is always fine.</div>
+          </div>
+        </div></div>
+        <p class="caption"><b>Log sheet.</b> Pre-filled with your usual amount — one tap from the widget, two from anywhere else. The two extra fields are earned: <b>why</b> (the ratio of scheduled to withdrawal-driven doses is the earliest warning a step is too steep) and <b>batch</b> (see below).</p>
+      </div>
+
+      <!-- WAVE -->
+      <div class="shot">
+        <div class="phone"><div class="island"></div><div class="screen tw">
+          <div class="status"><span>9:41</span><span>􀙇 􀛨</span></div>
+          <div class="wave-center">
+            <h3 class="wave-h">This will pass.</h3>
+            <p class="wave-p">Urges rise, peak, and fall on their own.<br />Yours have averaged 14 minutes.</p>
+            <div class="wavering">
+              <svg width="190" height="190" viewBox="0 0 190 190" style="transform: rotate(-90deg)">
+                <circle cx="95" cy="95" r="83" fill="none" stroke="#1F3050" stroke-width="10"/>
+                <circle cx="95" cy="95" r="83" fill="none" stroke="#58C2B5" stroke-width="10" stroke-linecap="round" stroke-dasharray="380 520"/>
+              </svg>
+              <div class="center"><div class="t">11:42</div><div class="u">remaining</div></div>
+            </div>
+            <div class="intent">"When it gets bad: hot shower, tea, text Sam."<br /><span style="font-style:normal; font-size:11px; color:#7E93AC">— you, on a good day</span></div>
+          </div>
+          <div class="wave-actions">
+            <div class="wa ok">I'm okay</div>
+            <div class="wa alt">Log a dose</div>
+          </div>
+        </div></div>
+        <p class="caption"><b>The wave.</b> For the taper's rough patches. Your own words from onboarding, and a no-shame exit: "Log a dose" sits right there, neutral. Note the subtitle — the popular "cravings pass in 20 minutes" line turns out to be unsourced folklore, so the app measures <i>your</i> urges from start/end timestamps and quotes your own average back to you. Honest and more persuasive.</p>
+      </div>
+    </div>
+
+    <ul class="notes">
+      <li><b>Amber, never red.</b> Going over plan renders the ring and chip in muted amber with copy like "18 mg today, plan was 15." No red screens, no exclamation marks — logging an over-plan dose looks identical to logging any dose.</li>
+      <li><b>Step context lives in the date line.</b> "Step 6" quietly anchors today inside the larger plan without making the plan the point of every glance.</li>
+      <li><b>Evening window nudge.</b> Because your biggest historical dose was evening (20 mg at baseline), the evening slot can open a few minutes later each week — stretching the interval is a second taper axis alongside mg.</li>
+    </ul>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- ============ DIRECTION B ============ -->
+  <section>
+    <p class="eyebrow">Direction B</p>
+    <h2>Ledger</h2>
+    <p class="sub">
+      Warm paper, serif numerals, moss-green ink — a medication chart kept by someone who cares.
+      Clinical enough to trust, warm enough to open daily. Shown here on the Plan and Trends screens,
+      where Ledger's chart-first language is strongest.
+    </p>
+
+    <div class="row">
+      <!-- PLAN -->
+      <div class="shot">
+        <div class="phone"><div class="island"></div><div class="screen lg">
+          <div class="status"><span>9:41</span><span>􀙇 􀛨</span></div>
+          <div class="lg-head">
+            <div class="lg-eyebrow">Taper plan · started Jul 1</div>
+            <div class="lg-title">45 → 0 mg</div>
+          </div>
+          <div class="lg-card">
+            <div class="steprow"><span class="stepnum">Step 6</span><span class="small">of ~26 · day 4 of 10</span></div>
+            <div class="small">15 mg/day · 5 + 5 + 5 · next: 14.25 mg (−5%) on Aug 22</div>
+          </div>
+          <div class="lg-card">
+            <svg class="lg-chart" width="100%" height="130" viewBox="0 0 264 130">
+              <line x1="0" y1="122" x2="264" y2="122" stroke="#E2DFD4" stroke-width="1"/>
+              <line x1="0" y1="76" x2="264" y2="76" stroke="#EEEBE0" stroke-width="1"/>
+              <line x1="0" y1="30" x2="264" y2="30" stroke="#EEEBE0" stroke-width="1"/>
+              <text x="2" y="26" font-size="8" fill="#8A927F">45</text>
+              <text x="2" y="72" font-size="8" fill="#8A927F">22</text>
+              <text x="2" y="118" font-size="8" fill="#8A927F">0</text>
+              <!-- planned steps (past) -->
+              <polyline fill="none" stroke="#5A7D5A" stroke-width="2"
+                points="14,30 34,30 34,39 54,39 54,48 74,48 74,57 94,57 94,66 114,66 114,74 134,74 134,84 152,84" />
+              <!-- planned (future, dashed) -->
+              <polyline fill="none" stroke="#9DB59D" stroke-width="2" stroke-dasharray="4 4"
+                points="152,84 168,84 168,92 184,92 184,99 200,99 200,106 216,106 216,112 232,112 232,118 250,118 250,122" />
+              <!-- actual dots -->
+              <circle cx="24" cy="31" r="2.6" fill="#232A24"/><circle cx="44" cy="40" r="2.6" fill="#232A24"/>
+              <circle cx="64" cy="47" r="2.6" fill="#232A24"/><circle cx="84" cy="59" r="2.6" fill="#232A24"/>
+              <circle cx="98" cy="63" r="2.6" fill="#C8A24B"/><circle cx="118" cy="73" r="2.6" fill="#232A24"/>
+              <circle cx="138" cy="84" r="2.6" fill="#232A24"/><circle cx="148" cy="84" r="2.6" fill="#232A24"/>
+              <!-- today marker -->
+              <line x1="152" y1="22" x2="152" y2="122" stroke="#C8A24B" stroke-width="1" stroke-dasharray="2 3"/>
+              <text x="156" y="20" font-size="8" fill="#8A927F">today</text>
+            </svg>
+            <div class="lg-legend">
+              <span><i style="background:#5A7D5A"></i>planned</span>
+              <span><i style="background:#232A24; height:5px; width:5px; border-radius:50%"></i>actual</span>
+              <span><i style="background:#9DB59D"></i>ahead (est.)</span>
+            </div>
+            <div class="small" style="margin-top:6px">Soft estimate: done around <b>Feb 2027</b>. Holds move this; nothing "falls behind."</div>
+          </div>
+          <div class="holdbtn">Hold this step</div>
+          <div class="holdcap">Repeats 15 mg/day for another cycle. No questions asked — stabilizing is part of tapering.</div>
+          <div class="tabbar">
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg>Today</div>
+            <div class="tab on"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h6v6H4zM10 12h6v6h-6z"/><path d="M16 18h4"/></svg>Plan</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 17l5-6 4 3 7-9"/></svg>Trends</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 4c-4 4-6 6.5-6 10a6 6 0 0012 0c0-3.5-2-6-6-10z"/></svg>Toolkit</div>
+          </div>
+        </div></div>
+        <p class="caption"><b>Plan.</b> The descending staircase is the app's soul: planned steps, your actual doses as ink dots, the future dashed. One amber dot in week 5 — visible, unremarkable, part of the record. "Hold this step" is the biggest control on the page.</p>
+      </div>
+
+      <!-- TRENDS -->
+      <div class="shot">
+        <div class="phone"><div class="island"></div><div class="screen lg">
+          <div class="status"><span>9:41</span><span>􀙇 􀛨</span></div>
+          <div class="lg-head">
+            <div class="lg-eyebrow">Since July 1</div>
+            <div class="lg-title">Trends</div>
+          </div>
+          <div class="lg-card">
+            <h4>7-day average dose</h4>
+            <svg class="lg-chart" width="100%" height="96" viewBox="0 0 264 96">
+              <line x1="0" y1="88" x2="264" y2="88" stroke="#E2DFD4" stroke-width="1"/>
+              <polyline fill="none" stroke="#5A7D5A" stroke-width="2.5" stroke-linecap="round"
+                points="10,14 40,17 70,24 100,33 120,31 150,44 180,55 210,62 240,66 254,67"/>
+              <circle cx="254" cy="67" r="3.5" fill="#5A7D5A"/>
+              <text x="196" y="60" font-size="9" fill="#466446" font-weight="700">15.0 mg</text>
+            </svg>
+            <div class="small">Down from 44.6 mg. The week-5 bump barely shows — that's the point of averages.</div>
+          </div>
+          <div class="statgrid">
+            <div class="stat"><b>67%</b><span>below baseline this week</span></div>
+            <div class="stat"><b>1,240 mg</b><span>not taken since Jul 1</span></div>
+            <div class="stat"><b>41 / 46</b><span>on-plan days (rolling)</span></div>
+            <div class="stat"><b>$248</b><span>not spent (est.)</span></div>
+          </div>
+          <div class="lg-card">
+            <h4>Evening check-in</h4>
+            <div class="sows">
+              <div class="sowsdots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="small">SOWS-lite 4/30 · mild — trending down since Tuesday</div>
+            </div>
+          </div>
+          <div class="tabbar">
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg>Today</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h6v6H4zM10 12h6v6h-6z"/><path d="M16 18h4"/></svg>Plan</div>
+            <div class="tab on"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 17l5-6 4 3 7-9"/></svg>Trends</div>
+            <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 4c-4 4-6 6.5-6 10a6 6 0 0012 0c0-3.5-2-6-6-10z"/></svg>Toolkit</div>
+          </div>
+        </div></div>
+        <p class="caption"><b>Trends.</b> Every number only accumulates or averages — nothing here can reset. The daily withdrawal check-in (a shortened SOWS scale) is what tells the taper engine when to suggest a hold before you'd even ask.</p>
+      </div>
+    </div>
+
+    <ul class="notes">
+      <li><b>The withdrawal check-in is load-bearing.</b> A 10-item SOWS-lite each evening (10 taps, under 20 seconds) gives the app the signal it needs: rising scores across 2–3 days → the Plan screen proactively offers "Hold this step?" That's the just-in-time intervention this profile actually needs — you said cravings only bite when withdrawal does.</li>
+      <li><b>Serif numerals are the identity.</b> New York for numbers, SF for controls. It reads as a document you keep, not a game you play.</li>
+      <li><b>The amber dot convention</b> carries across both directions: off-plan moments are recorded in amber ink, styled exactly like every other data point.</li>
+    </ul>
+    <div class="mixnote" style="margin-top:26px">
+      <b>An honest note about that finish date.</b> My first draft of this screen said "done around Oct 30." That
+      was wrong, and the correction matters more than any pixel on this page. At 15&nbsp;mg you're already at
+      about a third of your baseline, which is exactly where dose-to-receptor-occupancy stops being linear —
+      each equal-milligram cut from here removes a much bigger share of occupancy than the same cut did at
+      45&nbsp;mg. The evidence-based rate below the 30% mark is <b>1–5% of your current dose every 1–2 weeks</b>,
+      which puts the real finish somewhere around <b>February 2027</b>, roughly 26 more steps.
+      <br /><br />
+      That sounds discouraging and it is the opposite. Tapers running 12–52 weeks are about <b>3.6× more likely
+      to finish</b> than short ones, and tapers over a year about <b>6.7×</b>. Reductions slower than 5% per week
+      have significantly better outcomes than faster ones. The intuition that a fast taper is the decisive,
+      serious one is backwards — <i>slow is the version that works.</i> An app that quietly shows you an
+      optimistic date is setting you up to feel behind; this one should show the real one and make the long
+      timeline feel like the plan rather than a sentence.
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- ============ SYSTEM SURFACES ============ -->
+  <section>
+    <p class="eyebrow">iOS 27 + watchOS surfaces</p>
+    <h2>The app you rarely open</h2>
+    <p class="sub">
+      Most interactions shouldn't require launching anything. Logging lives on the Lock Screen, the
+      Dynamic Island, the Home Screen, and your wrist — each surface deliberately vague to shoulder-surfers.
+    </p>
+
+    <div class="surfacerow">
+      <div class="surfacecol">
+        <div class="la">
+          <div class="la-top">
+            <div class="app"><span class="ladot"></span>Nopiate</div>
+            <div class="mg">Evening · 5 mg</div>
+          </div>
+          <div class="la-bar"><div class="la-fill"></div></div>
+          <div class="la-foot"><span>last 12:41 PM</span><span>window opens 7:30 PM</span></div>
+        </div>
+        <p class="caption" style="text-align:center"><b>Live Activity.</b> Runs through the day as a quiet progress bar toward the next window. Note the label — "Nopiate" reads as drug-related at a glance, so the <i>display</i> name on the home screen and lock screen should be something neutral even though the project is called Nopiate.</p>
+      </div>
+      <div class="surfacecol">
+        <div class="di"><span>Nopiate</span><span class="g">7:30 PM</span></div>
+        <p class="caption" style="text-align:center"><b>Dynamic Island.</b> Compact view: just the next window. Long-press expands to the full activity with a Log button.</p>
+      </div>
+      <div class="surfacecol">
+        <div class="widget-s">
+          <div class="k">Today</div>
+          <div class="n">5</div>
+          <div class="u">mg left · 2 of 3 logged</div>
+        </div>
+        <p class="caption" style="text-align:center"><b>Small widget.</b> Interactive — tapping the number logs your usual dose via App Intent, no app launch.</p>
+      </div>
+      <div class="surfacecol">
+        <div class="widget-m">
+          <div class="wm-top"><span>NOPIATE · SATURDAY</span><span>67% ↓ baseline</span></div>
+          <div class="wm-slots">
+            <div class="wm-slot done"><div class="t">Morning</div><div class="v">✓ 8:12</div></div>
+            <div class="wm-slot done"><div class="t">Noon</div><div class="v">✓ 12:41</div></div>
+            <div class="wm-slot next"><div class="t">Evening</div><div class="v">7:30 PM</div></div>
+          </div>
+        </div>
+        <p class="caption" style="text-align:center"><b>Medium widget.</b> The day at a glance; the next slot is tappable.</p>
+      </div>
+    </div>
+
+    <div class="surfacerow" style="margin-top: 44px">
+      <div class="surfacecol">
+        <div class="watch"><div class="wscreen">
+          <div class="wtime">9:41</div>
+          <div class="wbig">5 mg</div>
+          <div class="wsub">left today · last 4h 12m ago</div>
+          <div class="wcta">Log 5 mg</div>
+        </div></div>
+        <p class="caption" style="text-align:center"><b>Watch app.</b> One giant button, pre-filled. Double-pinch confirms. This is the primary logger — the phone becomes the review surface.</p>
+      </div>
+      <div class="surfacecol">
+        <div class="watch"><div class="wscreen" style="align-items:center; text-align:center">
+          <div class="wtime">9:41</div>
+          <div class="wring">
+            <svg width="108" height="108" viewBox="0 0 108 108" style="transform:rotate(-90deg)">
+              <circle cx="54" cy="54" r="46" fill="none" stroke="#1C2530" stroke-width="8"/>
+              <circle cx="54" cy="54" r="46" fill="none" stroke="#58C2B5" stroke-width="8" stroke-linecap="round" stroke-dasharray="200 290"/>
+            </svg>
+            <div class="center"><b>11:42</b><span>breathe</span></div>
+          </div>
+          <div class="wsub" style="margin-top:2px">in 4 · hold 4 · out 6</div>
+          <div class="wcta ghost">I'm okay</div>
+        </div></div>
+        <p class="caption" style="text-align:center"><b>Wrist wave timer.</b> Haptic-paced breathing (taps on the inhale, stillness on the exhale) — usable with your phone in another room, which is where it should be at 9 PM.</p>
+      </div>
+      <div class="surfacecol">
+        <div class="watch"><div class="wscreen" style="justify-content:center; gap:10px">
+          <div class="wtime" style="text-align:center">Smart Stack</div>
+          <div style="background:#151B23; border-radius:18px; padding:12px 14px;">
+            <div style="font-size:10px; color:#7E93AC; font-weight:700">NOPIATE</div>
+            <div style="font-size:15px; font-weight:700; margin-top:2px">Window 7:30 PM</div>
+            <div style="font-size:11px; color:#8A98A6">2 of 3 · on plan</div>
+          </div>
+          <div style="background:#151B23; border-radius:18px; padding:12px 14px; opacity:.45">
+            <div style="font-size:10px; color:#7E93AC; font-weight:700">WEATHER</div>
+            <div style="font-size:15px; font-weight:700; margin-top:2px">72° Clear</div>
+          </div>
+        </div></div>
+        <p class="caption" style="text-align:center"><b>Smart Stack + complications.</b> A corner complication shows the ring with mg remaining; the Smart Stack card surfaces automatically near dose windows.</p>
+      </div>
+    </div>
+
+    <ul class="notes">
+      <li><b>Heart rate as a quiet witness.</b> With HealthKit, the watch can annotate withdrawal check-ins with resting HR and HRV — elevated resting HR is a real physical withdrawal marker, so your SOWS-lite scores get corroborated by data you didn't have to enter.</li>
+      <li><b>Everything above works on a personal developer build:</b> widgets, Live Activities (locally updated), App Intents, HealthKit, and the watch app need no special entitlements. I'm verifying the details in the platform research pass.</li>
+      <li><b>Notification discipline:</b> two per day maximum — the evening check-in and, during rough steps, a morning "how was the night?" Every notification has a Log action built in.</li>
+    </ul>
+  </section>
+
+  <hr class="rule" />
+
+  <section>
+    <p class="eyebrow">Constraints from the pharmacology</p>
+    <h2>Three things the drug dictates</h2>
+    <p class="sub">
+      These came out of the research and they change the product, not just the copy. Each one is a rule
+      the taper engine has to enforce whether or not it's visible on screen.
+    </p>
+    <ul class="notes">
+      <li><b>Cuts lie for two days.</b> 7-OH has a ~4-hour half-life on any single dose but accumulates to a &gt;20-hour effective half-life in daily users. A reduction can feel completely fine for 48 hours and then bite on day three. <b>Design consequence:</b> the app must never offer "you're doing great, want to cut early?" on 24 hours of good data. Step-down prompts are gated on a minimum 5–7 day hold <i>and</i> a flat-or-falling withdrawal trend.</li>
+      <li><b>Percent of current, not percent of baseline.</b> Community taper logs that cut 10% of the <i>original</i> dose every two days visibly fall apart around day four. The rate that holds is ~10% of the <i>current</i> dose every 7–14 days — so your steps get smaller in absolute mg as you descend: 15 → 13.5 → 12 → 11, and near the end 6 → 5.5 → 5. At your level each step is about half a 5&nbsp;mg tablet, which is why the plan should switch you to weighing crushed tablet powder below ~7&nbsp;mg/day.</li>
+      <li><b>A brand switch is a hidden dose change.</b> Lab analysis of commercial 7-OH products found actual content running <b>32–81% of the labeled amount</b>, with 10–17% variation tablet-to-tablet <i>within</i> the same bottle. Switching from an under-dosed brand to an accurate one at the "same mg" can be a real 2–3× jump; the reverse reads as unexplained withdrawal and looks like taper failure. <b>Design consequence:</b> log brand + lot with every dose, flag any change loudly, and treat the entire taper as percent-of-your-own-baseline rather than trusting absolute milligrams.</li>
+    </ul>
+    <div class="mixnote" style="margin-top:22px">
+      <b>Two safety items the app should carry, quietly but permanently.</b> First: tolerance falls during a taper,
+      which makes a relapse at your old 40–50&nbsp;mg dose the classic overdose scenario — naloxone on hand is
+      cheap insurance, and it reverses 7-OH. Second: federal scheduling of concentrated 7-OH is in motion right
+      now, so supply could vanish mid-taper and force a cold turkey you didn't choose. Worth having a fallback
+      settled before the plan reaches its middle. Neither of these needs to be a screen — a single line in a
+      "Just in case" section is enough.
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section>
+    <h2>Where I'd land</h2>
+    <div class="mixnote">
+      <b>Recommendation: Tidewater as the app's skin, Ledger's chart language inside it.</b>
+      The Today, Log, and Wave screens want Tidewater's dark calm — they're used morning and night, often in bed.
+      The Plan and Trends screens want Ledger's staircase chart and serif numerals — but they can live on the dark
+      ground with the same moss-to-teal ink. One app, two registers: <i>calm surface, rigorous ledger underneath.</i>
+      <br /><br />
+      One naming note: <b>Nopiate</b> is a good project name and a poor springboard label — it reads as
+      drug-related to anyone glancing at your phone, which cuts against the privacy posture the rest of the
+      design takes seriously. The bundle can stay Nopiate while the home-screen name and lock-screen strings
+      are something flat like "Waypoint" or "Daily."
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section>
+    <p class="eyebrow">Since these mockups were drawn</p>
+    <h2>What changed</h2>
+    <p class="sub">
+      Your product list and the copilot request both moved the design. These screens don't reflect the
+      changes yet — the next pass will.
+    </p>
+    <ul class="notes">
+      <li><b>The dose numbers on these screens are fiction, and that's the finding.</b> Five products at 10, 11, 12, 13, and 18&nbsp;mg, halved by hand, means "15&nbsp;mg/day" is only true on all-Omega days — the honest nominal range is <b>15 to 27&nbsp;mg/day</b> depending on which bottle is open. Layer in label inaccuracy and the real intake spans roughly <b>5 to 22&nbsp;mg</b>. A 5% taper step is 0.75&nbsp;mg. The step is smaller than the noise, so the Plan screen's tidy staircase is currently drawing a line through static.</li>
+      <li><b>The Astral Glitter powder moves to the front of the plan.</b> It was slated for the endgame below 7&nbsp;mg; it should come first, because it's what turns the baseline into a real number. Volumetric dosing — weigh ~100&nbsp;mg where the scale is accurate, dissolve to 1&nbsp;mg/mL, dose by oral syringe — gives 0.25&nbsp;mg resolution, far finer than any step this taper needs.</li>
+      <li><b>The log sheet's "batch" row becomes a preparation row.</b> Tablet + brand + lot during crossover, then solution + batch date + concentration afterward. Same purpose: never let a silent potency change read as a taper signal.</li>
+      <li><b>The evening SOWS form is replaced by free text.</b> Sixteen items a night is the burden that kills logging adherence. You describe how you feel, whenever you want, typed or spoken; the on-device model scores it onto the same 16 items. The real questionnaire runs occasionally to keep the model honest.</li>
+      <li><b>The copilot needs a home in the navigation.</b> Current tabs are Today / Plan / Trends / Toolkit. It probably replaces Toolkit — an always-available conversation that happens to contain the toolkit, rather than a menu of tools sitting next to a separate chat.</li>
+      <li><b>Adjuncts join the log.</b> Cannabis, melatonin, magnesium, and the rest go in the same intake stream so the app can answer "how bad was the RLS on magnesium nights versus without" from your own data — which, given how thin the supplement literature is, is better evidence than anything I could quote you.</li>
+    </ul>
+  </section>
+</div>

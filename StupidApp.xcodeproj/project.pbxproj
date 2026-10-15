@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02F186602FDDF018A8ED4611 /* Intake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2125B87D2BDA77F39D8540 /* Intake.swift */; };
+		0662B37FC75954F2F938B6FE /* DoseEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE51FDA6A63DF3E0DE44566 /* DoseEntities.swift */; };
+		089888946D1EDEF91B9E274D /* LogSpecificDoseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA9CB2015D229D79520004C /* LogSpecificDoseIntent.swift */; };
+		11B3FB7A44E5838494922551 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8A6DA20129EF6145E87E73 /* TrendsView.swift */; };
+		1630096FB6B6B72F89BD6F54 /* PaceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F037DD99590A273B2712356 /* PaceSheet.swift */; };
+		16C0A7FE89D6C8FE3109B490 /* SymptomParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A99158EEB5280EEAEC0C1 /* SymptomParser.swift */; };
+		1A3389BB9BF4E515F6D46D1C /* DoseEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE51FDA6A63DF3E0DE44566 /* DoseEntities.swift */; };
+		1CBDEF830722EDE00BA691AB /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D749377BF2985A88C804AA /* SettingsSheet.swift */; };
+		1FF62AEFABA9087EBD1EFFD5 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52808230AD1F39F5BC255EBA /* TodayView.swift */; };
+		224239DCB5951818A38F975A /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97F80A3D5040CA3D2D50392 /* Symptom.swift */; };
+		228362D2BE5D7E801749D4CB /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BAC5FDDB82CAF61D23570 /* Formatting.swift */; };
+		24838EF2A76867202E8DDBA2 /* Crossover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1878502515E3E0A1EB89F2 /* Crossover.swift */; };
+		250750BC442C722A8CEE7026 /* Intake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2125B87D2BDA77F39D8540 /* Intake.swift */; };
+		25965E2D2481FBBA682EFC5A /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6FE78303BC549992F6F92 /* Substance.swift */; };
+		26105A0263AD6C6C69AB3E5C /* CopilotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815619214D3F2C88BD5EEB50 /* CopilotView.swift */; };
+		2F19FBDA4B0BA50FD3EC5B98 /* LogSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1665DF78827E6A9079F808EA /* LogSheet.swift */; };
+		2FF3EBFF6E6E53EA93B74C21 /* Preparation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57343A5B9D5186B412AE295C /* Preparation.swift */; };
+		36B01E28604071B0D519971D /* StupidAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A12218A31A7C5B546A885D /* StupidAppApp.swift */; };
+		37824736F17C798F0D7C2A87 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B445F82ADAAFEAB8BC3455 /* LockScreenWidget.swift */; };
+		3DC17E2F962FD844A7507125 /* CrossoverSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE5C1D631E492A36E04DC7 /* CrossoverSheet.swift */; };
+		40AC3CB77DB9532102E71278 /* TodayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB01F32DCB16CEFBF79E21C /* TodayWidget.swift */; };
+		489A58A1F1A17F202A5945EB /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126D8E4D1175BA38203F8A8 /* BackupService.swift */; };
+		4BDF4F97C7B7C483E2702B7D /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52936351E250490EC08491 /* SharedStore.swift */; };
+		4D0256C1808740872E1DEB9B /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5959923B2D9061F41BA5863C /* PlanView.swift */; };
+		4D93282D6D844EAC71D2A358 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75006CBFD1B9B634C3BA458C /* SeedData.swift */; };
+		4F20E17F335B1C0C3F73BA0A /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97F80A3D5040CA3D2D50392 /* Symptom.swift */; };
+		54470ADCE504C77A3ABFEF0E /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75006CBFD1B9B634C3BA458C /* SeedData.swift */; };
+		55416A90C36B4549F90E01E3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE39D2346EF863312D76339 /* NotificationService.swift */; };
+		62A1DE20238C689B76E229BF /* LogSpecificDoseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA9CB2015D229D79520004C /* LogSpecificDoseIntent.swift */; };
+		640B7C9D903536032AD3C780 /* TaperPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284C76C2AA11C31C8156789 /* TaperPlan.swift */; };
+		6505AC80745CF22E66B65796 /* Preparation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57343A5B9D5186B412AE295C /* Preparation.swift */; };
+		66003F8FD50ABF7EDCEBED35 /* TaperPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284C76C2AA11C31C8156789 /* TaperPlan.swift */; };
+		67B452D2987384098A8F18CC /* TaperAssessment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F90E50D669431885BA18 /* TaperAssessment.swift */; };
+		67B707BFB0E7D10F0714F7CD /* DayDosesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ACA23C082DDFD01DEA6F7A /* DayDosesSheet.swift */; };
+		680352940215D3C6A4A5CEB6 /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E5A25D8E029CCD4679E54 /* LiveActivityController.swift */; };
+		6952B48CA43320A983F0E558 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0013AEE927B02641FDF94B4 /* Theme.swift */; };
+		699017B17FFCC93FACFF3CA7 /* StupidAppWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 601C4FFA5F391A40E28D49AB /* StupidAppWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		69DEE418ACA93DE3904F4023 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BAC5FDDB82CAF61D23570 /* Formatting.swift */; };
+		6FEE8A1129341CC39269076A /* LogDoseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C25D1BA1F3DE40810737CDE /* LogDoseIntent.swift */; };
+		725003DB366A9F6A293F3013 /* Crossover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1878502515E3E0A1EB89F2 /* Crossover.swift */; };
+		75BE01F89A0C426AA18F6B07 /* DoseActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A61BCAC69D8E3E680ADF4C /* DoseActivityAttributes.swift */; };
+		86ABA718C157706B17E2EB41 /* TaperPace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20570B78BF5A4770257B9C90 /* TaperPace.swift */; };
+		86F082B7641233D6BA020234 /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E5A25D8E029CCD4679E54 /* LiveActivityController.swift */; };
+		8B1268B0B725C8D4DEB10EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B5587C64DD418F8B149461 /* Assets.xcassets */; };
+		9355131D38C27D95FA30BCCE /* LogSlotDoseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F99603666391E1ED5046C /* LogSlotDoseIntent.swift */; };
+		9D2AD7B5152744D4807DBFCD /* TaperMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A2941264768A9AF4551B1 /* TaperMath.swift */; };
+		B7D2A02756BB3A747C61F324 /* StepInfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C25B530171B8BAF303BE0 /* StepInfoSheet.swift */; };
+		BA516FCCFCC517A214D05B71 /* LogSlotDoseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F99603666391E1ED5046C /* LogSlotDoseIntent.swift */; };
+		C20FDE9F76715D05C03E5AD2 /* LogDoseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C25D1BA1F3DE40810737CDE /* LogDoseIntent.swift */; };
+		C95CCD72912AF43FCD0C7195 /* AdjunctSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF55F6A041BE755477B1FC /* AdjunctSheet.swift */; };
+		C993CA5516E6BFA3BC474BDD /* LegacyStoreRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A99C9ECBE9E96081CDA3 /* LegacyStoreRecovery.swift */; };
+		C9CBB87809D71267894B82CE /* PhysiologyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48470B314BB6578144B20BBA /* PhysiologyCard.swift */; };
+		CD5294D345BD92AD089E9A15 /* DoseActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A61BCAC69D8E3E680ADF4C /* DoseActivityAttributes.swift */; };
+		D065AA49C73145040D164185 /* TaperMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A2941264768A9AF4551B1 /* TaperMath.swift */; };
+		DA2A8699E84C061E251DE6D7 /* TaperPace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20570B78BF5A4770257B9C90 /* TaperPace.swift */; };
+		E006D4F99705CE96DF3D24E9 /* LogIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D071457458B5A943175032 /* LogIsland.swift */; };
+		E08B678D2CE9DFA653E7249D /* DoseCountdownActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787AC9A5D7CD57DAB75EC39 /* DoseCountdownActivity.swift */; };
+		E1688FFFAB0F30B3346608B7 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DA4BF1D9FE01FFB99B8EE /* CheckIn.swift */; };
+		E8C2AA0DC5DA4227B4BCD41A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB80A23E030949F259D9A2 /* RootView.swift */; };
+		E8D931ECEF7381DD60488C3E /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2E33E9376773F19AC63FB /* HealthService.swift */; };
+		E93D9F8C29D39ABF1225C562 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DA4BF1D9FE01FFB99B8EE /* CheckIn.swift */; };
+		EB3FC9F6453811405AC41715 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52936351E250490EC08491 /* SharedStore.swift */; };
+		EF8D3A28937F8A6F749B6AEB /* LogControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB7ACD4BB21E859D613422 /* LogControl.swift */; };
+		F554F0723DC29CB0E8F076BC /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6FE78303BC549992F6F92 /* Substance.swift */; };
+		F7B7754520D0CE57DC063885 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0013AEE927B02641FDF94B4 /* Theme.swift */; };
+		FC7C42BD60B7A6BE7A7C2C00 /* StupidAppWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43552B929C0D6C1557323401 /* StupidAppWidgetBundle.swift */; };
+		FEDD75C5FD0CCCF84A623CCA /* Physiology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68164432D5F6C872313D4509 /* Physiology.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F845806784F9F86BC211805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7439C697EA5F3471A0E081E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9E316E214BA313AE3429F54;
+			remoteInfo = StupidAppWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		72C124E70061C8725308DB7F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				699017B17FFCC93FACFF3CA7 /* StupidAppWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1665DF78827E6A9079F808EA /* LogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSheet.swift; sourceTree = "<group>"; };
+		1B3E5A25D8E029CCD4679E54 /* LiveActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityController.swift; sourceTree = "<group>"; };
+		1DA2E33E9376773F19AC63FB /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
+		1FC6FE78303BC549992F6F92 /* Substance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Substance.swift; sourceTree = "<group>"; };
+		1FE39D2346EF863312D76339 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		20570B78BF5A4770257B9C90 /* TaperPace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaperPace.swift; sourceTree = "<group>"; };
+		22A61BCAC69D8E3E680ADF4C /* DoseActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseActivityAttributes.swift; sourceTree = "<group>"; };
+		2B1878502515E3E0A1EB89F2 /* Crossover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crossover.swift; sourceTree = "<group>"; };
+		3284C76C2AA11C31C8156789 /* TaperPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaperPlan.swift; sourceTree = "<group>"; };
+		35A12218A31A7C5B546A885D /* StupidAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StupidAppApp.swift; sourceTree = "<group>"; };
+		3A8A6DA20129EF6145E87E73 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
+		40CB7ACD4BB21E859D613422 /* LogControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogControl.swift; sourceTree = "<group>"; };
+		41D071457458B5A943175032 /* LogIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIsland.swift; sourceTree = "<group>"; };
+		43552B929C0D6C1557323401 /* StupidAppWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StupidAppWidgetBundle.swift; sourceTree = "<group>"; };
+		48470B314BB6578144B20BBA /* PhysiologyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysiologyCard.swift; sourceTree = "<group>"; };
+		498C25B530171B8BAF303BE0 /* StepInfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepInfoSheet.swift; sourceTree = "<group>"; };
+		52808230AD1F39F5BC255EBA /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		57343A5B9D5186B412AE295C /* Preparation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preparation.swift; sourceTree = "<group>"; };
+		5959923B2D9061F41BA5863C /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		601C4FFA5F391A40E28D49AB /* StupidAppWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = StupidAppWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		65ACA23C082DDFD01DEA6F7A /* DayDosesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDosesSheet.swift; sourceTree = "<group>"; };
+		68164432D5F6C872313D4509 /* Physiology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physiology.swift; sourceTree = "<group>"; };
+		75006CBFD1B9B634C3BA458C /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
+		7C25D1BA1F3DE40810737CDE /* LogDoseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDoseIntent.swift; sourceTree = "<group>"; };
+		7F037DD99590A273B2712356 /* PaceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceSheet.swift; sourceTree = "<group>"; };
+		7FE51FDA6A63DF3E0DE44566 /* DoseEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseEntities.swift; sourceTree = "<group>"; };
+		815619214D3F2C88BD5EEB50 /* CopilotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotView.swift; sourceTree = "<group>"; };
+		864DA4BF1D9FE01FFB99B8EE /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		880BAC5FDDB82CAF61D23570 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
+		882F8691EF0EE4225772C51D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		88BB80A23E030949F259D9A2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		96AF55F6A041BE755477B1FC /* AdjunctSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjunctSheet.swift; sourceTree = "<group>"; };
+		97BF608C07BAF1044BDB14C7 /* StupidAppWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StupidAppWidget.entitlements; sourceTree = "<group>"; };
+		9AA9CB2015D229D79520004C /* LogSpecificDoseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSpecificDoseIntent.swift; sourceTree = "<group>"; };
+		A3B445F82ADAAFEAB8BC3455 /* LockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenWidget.swift; sourceTree = "<group>"; };
+		A6B5587C64DD418F8B149461 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A71A99158EEB5280EEAEC0C1 /* SymptomParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomParser.swift; sourceTree = "<group>"; };
+		AEB01F32DCB16CEFBF79E21C /* TodayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidget.swift; sourceTree = "<group>"; };
+		BA7A2941264768A9AF4551B1 /* TaperMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaperMath.swift; sourceTree = "<group>"; };
+		BDC3A99C9ECBE9E96081CDA3 /* LegacyStoreRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyStoreRecovery.swift; sourceTree = "<group>"; };
+		BF52936351E250490EC08491 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		C97F80A3D5040CA3D2D50392 /* Symptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
+		DF2125B87D2BDA77F39D8540 /* Intake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intake.swift; sourceTree = "<group>"; };
+		E0013AEE927B02641FDF94B4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E39F99603666391E1ED5046C /* LogSlotDoseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSlotDoseIntent.swift; sourceTree = "<group>"; };
+		E787AC9A5D7CD57DAB75EC39 /* DoseCountdownActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseCountdownActivity.swift; sourceTree = "<group>"; };
+		EF6AAB79955A473E445CDFC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F126D8E4D1175BA38203F8A8 /* BackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupService.swift; sourceTree = "<group>"; };
+		F2D749377BF2985A88C804AA /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
+		F2EE5C1D631E492A36E04DC7 /* CrossoverSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossoverSheet.swift; sourceTree = "<group>"; };
+		F342EF45B07B8C8D5D6593BF /* StupidApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StupidApp.entitlements; sourceTree = "<group>"; };
+		F510F90E50D669431885BA18 /* TaperAssessment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaperAssessment.swift; sourceTree = "<group>"; };
+		F5F1DBB3236C0029580F9397 /* StupidApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = StupidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0BACBF62D8871EB0D347C7E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5F1DBB3236C0029580F9397 /* StupidApp.app */,
+				601C4FFA5F391A40E28D49AB /* StupidAppWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15F416D6E73E2780AEF93EB6 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F126D8E4D1175BA38203F8A8 /* BackupService.swift */,
+				1DA2E33E9376773F19AC63FB /* HealthService.swift */,
+				BDC3A99C9ECBE9E96081CDA3 /* LegacyStoreRecovery.swift */,
+				1FE39D2346EF863312D76339 /* NotificationService.swift */,
+				68164432D5F6C872313D4509 /* Physiology.swift */,
+				A71A99158EEB5280EEAEC0C1 /* SymptomParser.swift */,
+				F510F90E50D669431885BA18 /* TaperAssessment.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		4FD460E9907B0276CDB6182D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2B1878502515E3E0A1EB89F2 /* Crossover.swift */,
+				22A61BCAC69D8E3E680ADF4C /* DoseActivityAttributes.swift */,
+				7FE51FDA6A63DF3E0DE44566 /* DoseEntities.swift */,
+				880BAC5FDDB82CAF61D23570 /* Formatting.swift */,
+				1B3E5A25D8E029CCD4679E54 /* LiveActivityController.swift */,
+				7C25D1BA1F3DE40810737CDE /* LogDoseIntent.swift */,
+				E39F99603666391E1ED5046C /* LogSlotDoseIntent.swift */,
+				9AA9CB2015D229D79520004C /* LogSpecificDoseIntent.swift */,
+				BF52936351E250490EC08491 /* SharedStore.swift */,
+				BA7A2941264768A9AF4551B1 /* TaperMath.swift */,
+				20570B78BF5A4770257B9C90 /* TaperPace.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5BC491A3DF150E947BA92FC3 = {
+			isa = PBXGroup;
+			children = (
+				4FD460E9907B0276CDB6182D /* Shared */,
+				91A18BAAAB2E369097A39B60 /* StupidApp */,
+				789373D9466C5450496F5C76 /* StupidAppWidget */,
+				0BACBF62D8871EB0D347C7E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7420C08AEFA70C9C87AD5A35 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96AF55F6A041BE755477B1FC /* AdjunctSheet.swift */,
+				815619214D3F2C88BD5EEB50 /* CopilotView.swift */,
+				F2EE5C1D631E492A36E04DC7 /* CrossoverSheet.swift */,
+				65ACA23C082DDFD01DEA6F7A /* DayDosesSheet.swift */,
+				41D071457458B5A943175032 /* LogIsland.swift */,
+				1665DF78827E6A9079F808EA /* LogSheet.swift */,
+				7F037DD99590A273B2712356 /* PaceSheet.swift */,
+				48470B314BB6578144B20BBA /* PhysiologyCard.swift */,
+				5959923B2D9061F41BA5863C /* PlanView.swift */,
+				88BB80A23E030949F259D9A2 /* RootView.swift */,
+				F2D749377BF2985A88C804AA /* SettingsSheet.swift */,
+				498C25B530171B8BAF303BE0 /* StepInfoSheet.swift */,
+				52808230AD1F39F5BC255EBA /* TodayView.swift */,
+				3A8A6DA20129EF6145E87E73 /* TrendsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		789373D9466C5450496F5C76 /* StupidAppWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E787AC9A5D7CD57DAB75EC39 /* DoseCountdownActivity.swift */,
+				EF6AAB79955A473E445CDFC8 /* Info.plist */,
+				A3B445F82ADAAFEAB8BC3455 /* LockScreenWidget.swift */,
+				40CB7ACD4BB21E859D613422 /* LogControl.swift */,
+				97BF608C07BAF1044BDB14C7 /* StupidAppWidget.entitlements */,
+				43552B929C0D6C1557323401 /* StupidAppWidgetBundle.swift */,
+				AEB01F32DCB16CEFBF79E21C /* TodayWidget.swift */,
+			);
+			path = StupidAppWidget;
+			sourceTree = "<group>";
+		};
+		91A18BAAAB2E369097A39B60 /* StupidApp */ = {
+			isa = PBXGroup;
+			children = (
+				A6B5587C64DD418F8B149461 /* Assets.xcassets */,
+				882F8691EF0EE4225772C51D /* Info.plist */,
+				F342EF45B07B8C8D5D6593BF /* StupidApp.entitlements */,
+				35A12218A31A7C5B546A885D /* StupidAppApp.swift */,
+				D2012F78E74211B049496CE5 /* Design */,
+				B2B23820F82BD76B6E49508C /* Models */,
+				15F416D6E73E2780AEF93EB6 /* Support */,
+				7420C08AEFA70C9C87AD5A35 /* Views */,
+			);
+			path = StupidApp;
+			sourceTree = "<group>";
+		};
+		B2B23820F82BD76B6E49508C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				864DA4BF1D9FE01FFB99B8EE /* CheckIn.swift */,
+				DF2125B87D2BDA77F39D8540 /* Intake.swift */,
+				57343A5B9D5186B412AE295C /* Preparation.swift */,
+				75006CBFD1B9B634C3BA458C /* SeedData.swift */,
+				1FC6FE78303BC549992F6F92 /* Substance.swift */,
+				C97F80A3D5040CA3D2D50392 /* Symptom.swift */,
+				3284C76C2AA11C31C8156789 /* TaperPlan.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2012F78E74211B049496CE5 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				E0013AEE927B02641FDF94B4 /* Theme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81641DAA1B8A79CE9A091D71 /* StupidApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 116D81BD969CBC0C96DFA436 /* Build configuration list for PBXNativeTarget "StupidApp" */;
+			buildPhases = (
+				8718E4DC3CA51EA15AEC9DC6 /* Sources */,
+				E7CEC79D3D07FF168424F333 /* Strip extended attributes */,
+				9680A62B4CDCAA8145FBE334 /* Resources */,
+				72C124E70061C8725308DB7F /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6A959F56DF5204330756A37 /* PBXTargetDependency */,
+			);
+			name = StupidApp;
+			packageProductDependencies = (
+			);
+			productName = StupidApp;
+			productReference = F5F1DBB3236C0029580F9397 /* StupidApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9E316E214BA313AE3429F54 /* StupidAppWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2A17C7998AD714A8067E4EE /* Build configuration list for PBXNativeTarget "StupidAppWidget" */;
+			buildPhases = (
+				E00109E907E7702013C12445 /* Sources */,
+				D0C5C3D83A9F03F68046656E /* Strip extended attributes */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StupidAppWidget;
+			packageProductDependencies = (
+			);
+			productName = StupidAppWidget;
+			productReference = 601C4FFA5F391A40E28D49AB /* StupidAppWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7439C697EA5F3471A0E081E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					81641DAA1B8A79CE9A091D71 = {
+
+						ProvisioningStyle = Automatic;
+					};
+					C9E316E214BA313AE3429F54 = {
+
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2E19163D07D9CD31C29C8F10 /* Build configuration list for PBXProject "StupidApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5BC491A3DF150E947BA92FC3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0BACBF62D8871EB0D347C7E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81641DAA1B8A79CE9A091D71 /* StupidApp */,
+				C9E316E214BA313AE3429F54 /* StupidAppWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9680A62B4CDCAA8145FBE334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B1268B0B725C8D4DEB10EAC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0C5C3D83A9F03F68046656E /* Strip extended attributes */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Strip extended attributes";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/xattr -cr \"$TARGET_BUILD_DIR/$WRAPPER_NAME\" || true";
+		};
+		E7CEC79D3D07FF168424F333 /* Strip extended attributes */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Strip extended attributes";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/xattr -cr \"$TARGET_BUILD_DIR/$WRAPPER_NAME\" || true";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8718E4DC3CA51EA15AEC9DC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95CCD72912AF43FCD0C7195 /* AdjunctSheet.swift in Sources */,
+				489A58A1F1A17F202A5945EB /* BackupService.swift in Sources */,
+				E1688FFFAB0F30B3346608B7 /* CheckIn.swift in Sources */,
+				26105A0263AD6C6C69AB3E5C /* CopilotView.swift in Sources */,
+				24838EF2A76867202E8DDBA2 /* Crossover.swift in Sources */,
+				3DC17E2F962FD844A7507125 /* CrossoverSheet.swift in Sources */,
+				67B707BFB0E7D10F0714F7CD /* DayDosesSheet.swift in Sources */,
+				75BE01F89A0C426AA18F6B07 /* DoseActivityAttributes.swift in Sources */,
+				0662B37FC75954F2F938B6FE /* DoseEntities.swift in Sources */,
+				228362D2BE5D7E801749D4CB /* Formatting.swift in Sources */,
+				E8D931ECEF7381DD60488C3E /* HealthService.swift in Sources */,
+				02F186602FDDF018A8ED4611 /* Intake.swift in Sources */,
+				C993CA5516E6BFA3BC474BDD /* LegacyStoreRecovery.swift in Sources */,
+				680352940215D3C6A4A5CEB6 /* LiveActivityController.swift in Sources */,
+				C20FDE9F76715D05C03E5AD2 /* LogDoseIntent.swift in Sources */,
+				E006D4F99705CE96DF3D24E9 /* LogIsland.swift in Sources */,
+				2F19FBDA4B0BA50FD3EC5B98 /* LogSheet.swift in Sources */,
+				BA516FCCFCC517A214D05B71 /* LogSlotDoseIntent.swift in Sources */,
+				089888946D1EDEF91B9E274D /* LogSpecificDoseIntent.swift in Sources */,
+				55416A90C36B4549F90E01E3 /* NotificationService.swift in Sources */,
+				1630096FB6B6B72F89BD6F54 /* PaceSheet.swift in Sources */,
+				FEDD75C5FD0CCCF84A623CCA /* Physiology.swift in Sources */,
+				C9CBB87809D71267894B82CE /* PhysiologyCard.swift in Sources */,
+				4D0256C1808740872E1DEB9B /* PlanView.swift in Sources */,
+				6505AC80745CF22E66B65796 /* Preparation.swift in Sources */,
+				E8C2AA0DC5DA4227B4BCD41A /* RootView.swift in Sources */,
+				4D93282D6D844EAC71D2A358 /* SeedData.swift in Sources */,
+				1CBDEF830722EDE00BA691AB /* SettingsSheet.swift in Sources */,
+				4BDF4F97C7B7C483E2702B7D /* SharedStore.swift in Sources */,
+				B7D2A02756BB3A747C61F324 /* StepInfoSheet.swift in Sources */,
+				36B01E28604071B0D519971D /* StupidAppApp.swift in Sources */,
+				F554F0723DC29CB0E8F076BC /* Substance.swift in Sources */,
+				224239DCB5951818A38F975A /* Symptom.swift in Sources */,
+				16C0A7FE89D6C8FE3109B490 /* SymptomParser.swift in Sources */,
+				67B452D2987384098A8F18CC /* TaperAssessment.swift in Sources */,
+				D065AA49C73145040D164185 /* TaperMath.swift in Sources */,
+				DA2A8699E84C061E251DE6D7 /* TaperPace.swift in Sources */,
+				640B7C9D903536032AD3C780 /* TaperPlan.swift in Sources */,
+				F7B7754520D0CE57DC063885 /* Theme.swift in Sources */,
+				1FF62AEFABA9087EBD1EFFD5 /* TodayView.swift in Sources */,
+				11B3FB7A44E5838494922551 /* TrendsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00109E907E7702013C12445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E93D9F8C29D39ABF1225C562 /* CheckIn.swift in Sources */,
+				725003DB366A9F6A293F3013 /* Crossover.swift in Sources */,
+				CD5294D345BD92AD089E9A15 /* DoseActivityAttributes.swift in Sources */,
+				E08B678D2CE9DFA653E7249D /* DoseCountdownActivity.swift in Sources */,
+				1A3389BB9BF4E515F6D46D1C /* DoseEntities.swift in Sources */,
+				69DEE418ACA93DE3904F4023 /* Formatting.swift in Sources */,
+				250750BC442C722A8CEE7026 /* Intake.swift in Sources */,
+				86F082B7641233D6BA020234 /* LiveActivityController.swift in Sources */,
+				37824736F17C798F0D7C2A87 /* LockScreenWidget.swift in Sources */,
+				EF8D3A28937F8A6F749B6AEB /* LogControl.swift in Sources */,
+				6FEE8A1129341CC39269076A /* LogDoseIntent.swift in Sources */,
+				9355131D38C27D95FA30BCCE /* LogSlotDoseIntent.swift in Sources */,
+				62A1DE20238C689B76E229BF /* LogSpecificDoseIntent.swift in Sources */,
+				2FF3EBFF6E6E53EA93B74C21 /* Preparation.swift in Sources */,
+				54470ADCE504C77A3ABFEF0E /* SeedData.swift in Sources */,
+				EB3FC9F6453811405AC41715 /* SharedStore.swift in Sources */,
+				FC7C42BD60B7A6BE7A7C2C00 /* StupidAppWidgetBundle.swift in Sources */,
+				25965E2D2481FBBA682EFC5A /* Substance.swift in Sources */,
+				4F20E17F335B1C0C3F73BA0A /* Symptom.swift in Sources */,
+				9D2AD7B5152744D4807DBFCD /* TaperMath.swift in Sources */,
+				86ABA718C157706B17E2EB41 /* TaperPace.swift in Sources */,
+				66003F8FD50ABF7EDCEBED35 /* TaperPlan.swift in Sources */,
+				6952B48CA43320A983F0E558 /* Theme.swift in Sources */,
+				40AC3CB77DB9532102E71278 /* TodayWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6A959F56DF5204330756A37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9E316E214BA313AE3429F54 /* StupidAppWidget */;
+			targetProxy = 5F845806784F9F86BC211805 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		56FE2B2FA931E542B4C1E50A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		57699B0B8FE2DFBD91A7E798 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StupidApp/StupidApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = StupidApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Stupid App";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.utkarsh.stupidapp;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		74C94FAD95681C81190BF68A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9909E56AB8520C150ADF0E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StupidAppWidget/StupidAppWidget.entitlements;
+				INFOPLIST_FILE = StupidAppWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.utkarsh.stupidapp.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A8A3C6FFD7B458EE103AB3F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StupidApp/StupidApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = StupidApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Stupid App";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.utkarsh.stupidapp;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FC2835A1E59F180B529A2FE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StupidAppWidget/StupidAppWidget.entitlements;
+				INFOPLIST_FILE = StupidAppWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.utkarsh.stupidapp.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		116D81BD969CBC0C96DFA436 /* Build configuration list for PBXNativeTarget "StupidApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57699B0B8FE2DFBD91A7E798 /* Debug */,
+				A8A3C6FFD7B458EE103AB3F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2E19163D07D9CD31C29C8F10 /* Build configuration list for PBXProject "StupidApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74C94FAD95681C81190BF68A /* Debug */,
+				56FE2B2FA931E542B4C1E50A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A2A17C7998AD714A8067E4EE /* Build configuration list for PBXNativeTarget "StupidAppWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9909E56AB8520C150ADF0E9E /* Debug */,
+				FC2835A1E59F180B529A2FE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E7439C697EA5F3471A0E081E /* Project object */;
+}
